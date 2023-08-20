@@ -13,7 +13,8 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = 	ft_memset.c
+SRC = 	ft_memset.c \
+		ft_bzero.c
 
 OBJ = $(SRC:.c=.o)
 

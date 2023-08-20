@@ -12,6 +12,9 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
 
 void	*ft_memset(void *ptr, int value, size_t count);
 void	*ft_bzero(void *ptr, size_t count);
