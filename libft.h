@@ -6,7 +6,7 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 12:06:46 by mvan-pee          #+#    #+#             */
-/*   Updated: 2023/08/20 12:54:11 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/08/20 13:08:37 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define LIBFT_H
 
 void	*ft_memset(void *ptr, int value, size_t count);
+void	*ft_bzero(void *ptr, size_t count);
 
 #endif
