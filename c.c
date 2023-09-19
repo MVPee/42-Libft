@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   c.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 12:21:03 by mvan-pee          #+#    #+#             */
-/*   Updated: 2023/09/19 16:02:21 by mvpee            ###   ########.fr       */
+/*   Created: 2023/09/19 13:42:54 by mvpee             #+#    #+#             */
+/*   Updated: 2023/09/19 16:00:29 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t count)
+int main(int ac, char **av)
 {
-	unsigned char	*p;
-	size_t			i;
-
-	p = ptr;
-	i = -1;
-	while (++i < count)
-		p[i] = value;
-	return (p);
+    int *array;
+    array = malloc(4);
+    ft_bzero(array, 4);
+    int i = 0;
+    while(i < 4)
+    {
+        printf("%d\n", array[i]);
+        i++;
+    }
 }
