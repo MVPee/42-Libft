@@ -6,7 +6,7 @@
 #    By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 12:08:07 by mvan-pee          #+#    #+#              #
-#    Updated: 2023/09/19 18:20:58 by mvpee            ###   ########.fr        #
+#    Updated: 2023/09/19 18:30:41 by mvpee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRC = 	ft_memset.c \
 		ft_memccpy.c \
 		ft_memmove.c \
 		ft_memchr.c \
-		ft_memchr.c
+		ft_memchr.c \
+		ft_memcmp.c
 
 OBJ = $(SRC:.c=.o)
 
