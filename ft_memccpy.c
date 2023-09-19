@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c.c                                                :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 13:42:54 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/19 18:21:03 by mvpee            ###   ########.fr       */
+/*   Created: 2023/09/19 16:52:20 by mvpee             #+#    #+#             */
+/*   Updated: 2023/09/19 18:21:02 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main() {
-    char str[] = "Bonjour, le monde!";
-    char *result;
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+{
+	unsigned char		*d;
+	unsigned const char	*s;
+	size_t				i;
 
-    // Recherche de la première occurrence de 'l' dans str
-    result = ft_memchr(str, 'l', strlen(str));
-
-    if (result != NULL) {
-        printf("Le caractère 'l' a été trouvé à la position %ld\n", result - str);
-    } else {
-        printf("Le caractère 'l' n'a pas été trouvé dans la chaîne.\n");
-    }
-
-    return 0;
+	d = (unsigned char *)dest;
+	s = (unsigned const char *)src;
+	i = 0;
+	while (++i < n)
+	{
+		d[i] = s[i];
+		if (s[i] == (unsigned char)c)
+			return (d);
+	}
+	return (d);
 }

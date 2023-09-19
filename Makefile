@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+         #
+#    By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 12:08:07 by mvan-pee          #+#    #+#              #
-#    Updated: 2023/08/20 12:54:12 by mvan-pee         ###   ########.fr        #
+#    Updated: 2023/09/19 18:20:58 by mvpee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,12 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = 	ft_memset.c \
-		ft_bzero.c
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memccpy.c \
+		ft_memmove.c \
+		ft_memchr.c \
+		ft_memchr.c
 
 OBJ = $(SRC:.c=.o)
 
