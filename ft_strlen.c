@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c.c                                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 13:42:54 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/19 19:10:29 by mvpee            ###   ########.fr       */
+/*   Created: 2023/09/19 18:39:48 by mvpee             #+#    #+#             */
+/*   Updated: 2023/09/19 18:48:56 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main()
+size_t	ft_strlen(const char *str)
 {
-    const char *src = "Bonjour, le monde!";
-    char dest[50] = "Test ";
+	int	i;
 
-    // Utilisation de strdup pour dupliquer la chaîne originale
-    strncat(dest, src, 5);
-
-    printf("Chaîne originale : %s\n", src);
-    printf("Chaîne dupliquée : %s\n", dest);
-
-    return 0;
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

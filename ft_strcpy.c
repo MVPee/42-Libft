@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c.c                                                :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 13:42:54 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/19 19:10:29 by mvpee            ###   ########.fr       */
+/*   Created: 2023/09/19 18:53:36 by mvpee             #+#    #+#             */
+/*   Updated: 2023/09/19 19:09:14 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main()
+char	*ft_strcpy(char *dest, const char *src)
 {
-    const char *src = "Bonjour, le monde!";
-    char dest[50] = "Test ";
+	int i;
 
-    // Utilisation de strdup pour dupliquer la chaîne originale
-    strncat(dest, src, 5);
-
-    printf("Chaîne originale : %s\n", src);
-    printf("Chaîne dupliquée : %s\n", dest);
-
-    return 0;
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
