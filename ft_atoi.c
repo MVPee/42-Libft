@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 19:09:01 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/21 18:04:00 by mvpee            ###   ########.fr       */
+/*   Created: 2023/09/21 19:28:06 by mvpee             #+#    #+#             */
+/*   Updated: 2023/09/21 20:24:38 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strncat(char *dest, const char *src, size_t n)
+int	ft_atoi(const char *nptr)
 {
+	int	sign;
+	int	result;
 	int	i;
-	int	j;
 
+	sign = 1;
+	result = 0;
 	i = 0;
-	j = 0;
-	while (dest[j])
-		j++;
-	while (src[i] && n > 0)
-	{
-		dest[j + i] = src[i];
+	while ((nptr[i] > 8 && nptr[i] < 14) || nptr[i] == 32)
 		i++;
-		n--;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }

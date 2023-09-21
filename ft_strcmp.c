@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 19:09:01 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/21 18:04:00 by mvpee            ###   ########.fr       */
+/*   Created: 2023/09/21 19:15:39 by mvpee             #+#    #+#             */
+/*   Updated: 2023/09/21 19:19:52 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strncat(char *dest, const char *src, size_t n)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (dest[j])
-		j++;
-	while (src[i] && n > 0)
+	while (*s1 || *s2)
 	{
-		dest[j + i] = src[i];
-		i++;
-		n--;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
+	return (0);
 }

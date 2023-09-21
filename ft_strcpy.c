@@ -6,7 +6,7 @@
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 18:53:36 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/19 19:09:14 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/09/21 18:03:26 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])

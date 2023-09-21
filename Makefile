@@ -6,7 +6,7 @@
 #    By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 12:08:07 by mvan-pee          #+#    #+#              #
-#    Updated: 2023/09/19 19:10:44 by mvpee            ###   ########.fr        #
+#    Updated: 2023/09/21 20:54:23 by mvpee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,22 @@ SRC = 	ft_memset.c \
 		ft_strcpy.c \
 		ft_strncpy.c \
 		ft_strcat.c \
-		ft_strncat.c
+		ft_strncat.c \
+		ft_strlcat.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strstr.c \
+		ft_strnstr.c \
+		ft_strcmp.c \
+		ft_strncmp.c \
+		ft_atoi.c \
+		ft_isalpha.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_toupper.c \
+		ft_tolower.c
 
 OBJ = $(SRC:.c=.o)
 

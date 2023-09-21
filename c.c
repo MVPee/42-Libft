@@ -6,7 +6,7 @@
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:42:54 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/19 19:10:29 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/09/21 21:11:08 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 
 int main()
 {
-    const char *src = "Bonjour, le monde!";
-    char dest[50] = "Test ";
-
-    // Utilisation de strdup pour dupliquer la chaîne originale
-    strncat(dest, src, 5);
-
-    printf("Chaîne originale : %s\n", src);
-    printf("Chaîne dupliquée : %s\n", dest);
-
+    printf("%d\n", ft_isdigit(9));
     return 0;
 }
