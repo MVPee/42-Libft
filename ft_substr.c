@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 18:18:08 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/21 18:24:26 by mvpee            ###   ########.fr       */
+/*   Created: 2023/10/11 09:47:48 by mvpee             #+#    #+#             */
+/*   Updated: 2023/10/11 10:08:42 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	j;
+	char	*str;
+	size_t	size;
+	size_t	i;
 
-	i = 0;
-	if (!needle[0])
-		return ((char *)haystack);
-	while (haystack[i])
-	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && needle[j])
-		{
-			j++;
-		}
-		if (needle[j] == '\0')
-			return ((char *)haystack + i);
-		i++;
-	}
-	return (NULL);
+	if (!s)
+		return (NULL);
+	size = ft_strlen(s);
+	if (start > size)
+		len = 0;
+	if (size - start < len)
+		len = size - start;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		str[i] = s[start + i];
+	str[++i] = '\0';
+	return (str);
 }

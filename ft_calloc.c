@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 19:15:39 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/21 19:19:52 by mvpee            ###   ########.fr       */
+/*   Created: 2023/10/11 09:41:49 by mvpee             #+#    #+#             */
+/*   Updated: 2023/10/11 10:02:58 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	while (*s1 || *s2)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (0);
+	char	*mem;
+
+	mem = (char *)malloc(nmemb * size);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, nmemb * size);
+	return (mem);
 }
