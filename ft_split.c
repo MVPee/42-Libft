@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:35:25 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/11 10:40:59 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/10/15 09:39:07 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	separator_check(char a, char c)
 	return (0);
 }
 
-int	total_sing(char const *s, char c)
+int	total_string(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -68,14 +68,14 @@ char	*ft_word(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**sings;
+	char	**strings;
 	int		i;
 
 	i = 0;
-	if (!s || !c)
+	if (!s)
 		return (0);
-	sings = (char **)malloc(sizeof(char *) * (total_sing(s, c) + 1));
-	if (!sings)
+	strings = (char **)malloc(sizeof(char *) * (total_string(s, c) + 1));
+	if (!strings)
 		return (0);
 	while (*s)
 	{
@@ -83,12 +83,12 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s != '\0')
 		{
-			sings[i] = ft_word(s, c);
+			strings[i] = ft_word(s, c);
 			i++;
 		}
 		while (*s && !separator_check(*s, c))
 			s++;
 	}
-	sings[i] = 0;
-	return (sings);
+	strings[i] = 0;
+	return (strings);
 }

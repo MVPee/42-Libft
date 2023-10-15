@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 18:15:58 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/21 18:21:22 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/10/15 10:23:30 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s);
-	while (s[--i])
+	while (i > -1)
 	{
 		if (s[i] == c)
-		{
-			return ((char *)&s[i]);
-		}
+			return ((char *)s + i);
+		i--;
 	}
 	return (NULL);
 }

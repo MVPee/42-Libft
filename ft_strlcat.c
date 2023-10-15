@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:57:20 by mvpee             #+#    #+#             */
-/*   Updated: 2023/09/21 18:04:18 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/10/15 09:15:11 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ unsigned int	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	size_src;
 	size_t	i;
 
+	if (!size)
+		return (ft_strlen(src));
 	i = 0;
 	size_dest = ft_strlen(dest);
 	size_src = ft_strlen(src);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 09:47:48 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/11 10:08:42 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/10/15 09:34:02 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = -1;
 	while (++i < len)
 		str[i] = s[start + i];
-	str[++i] = '\0';
+	str[i] = '\0';
 	return (str);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mvpee <mvpee@19.be>                        +#+  +:+       +#+         #
+#    By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 12:08:07 by mvan-pee          #+#    #+#              #
-#    Updated: 2023/10/13 15:24:21 by mvpee            ###   ########.fr        #
+#    Updated: 2023/10/15 08:34:51 by mvan-pee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC =	ft_isalpha.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
+		ft_putstr_fd.c \
 		ft_putchar_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
