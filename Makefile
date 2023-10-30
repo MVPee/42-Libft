@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+         #
+#    By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 12:08:07 by mvan-pee          #+#    #+#              #
-#    Updated: 2023/10/15 08:34:51 by mvan-pee         ###   ########.fr        #
+#    Updated: 2023/10/30 19:29:53 by mvpee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,11 @@ SRC =	ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
 OBJ = $(SRC:.c=.o)
+
+OBJBONUS = ${BONUS:.c=.o}
 
 NAME = libft.a
 
@@ -61,11 +65,13 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
-
+	rm -f $(OBJ) $(OBJBONUS)
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus:	${OBJ} ${OBJBONUS}
+		ar rcs ${NAME} ${OBJ} ${OBJBONUS}
 
 .PHONY: all clean fclean re
