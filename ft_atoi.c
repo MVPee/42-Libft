@@ -6,66 +6,36 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:28:06 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/31 13:28:08 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:44:59 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_overflow(const char *str, int idx, int sign)
-{
-	int				count;
-	unsigned long	result;
-
-	count = 0;
-	result = 0;
-	while (str[idx] >= '0' && str[idx] <= '9')
-	{
-		if (count++ > 18)
-		{
-			if (sign == 1)
-				return (-1);
-			else
-				return (0);
-		}
-		if (result > ULONG_MAX / 10 || (result == ULONG_MAX / 10 && (str[idx] - '0') > (ULONG_MAX % 10)))
-		{
-			if (sign == 1)
-				return (-1);
-			else
-				return (0);
-		}
-		result = result * 10 + (str[idx++] - '0');
-	}
-	return (1);
-}
-
-
 int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	result;
-	int	i;
-	int	overflow;
+	unsigned long	nbr;
+	int				sign;
 
 	sign = 1;
-	result = 0;
-	i = 0;
-	while ((nptr[i] > 8 && nptr[i] < 14) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	nbr = 0;
+	while ((*nptr != '\0') && ((*nptr == 32) || (*nptr >= 9 && *nptr <= 13)))
+		nptr++;
+	if (*nptr == 45)
 	{
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
+		sign *= -1;
+		nptr++;
 	}
-	overflow = check_overflow(nptr, i, sign);
-	if (overflow != 1)
-		return (overflow);
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	else if (*nptr == 43)
+		nptr++;
+	while ((*nptr != '\0') && (*nptr >= 48 && *nptr <= 57))
 	{
-		result = result * 10 + (nptr[i] - '0');
-		i++;
+		nbr = (nbr * 10) + (*nptr - 48);
+		nptr++;
+		if ((nbr > LONG_MAX) && (sign == 1))
+			return (-1);
+		else if ((nbr > LONG_MAX) && (sign == -1))
+			return (0);
 	}
-	return (result * sign);
+	return (nbr * sign);
 }
