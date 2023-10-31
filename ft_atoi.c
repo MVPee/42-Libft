@@ -6,7 +6,7 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:28:06 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/31 13:15:01 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/10/31 13:28:08 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,27 @@ int	check_overflow(const char *str, int idx, int sign)
 
 	count = 0;
 	result = 0;
-	while (str[idx + count] >= '0' && str[idx + count] <= '9')
+	while (str[idx] >= '0' && str[idx] <= '9')
 	{
-		count++;
-		if (count > 19)
+		if (count++ > 18)
 		{
 			if (sign == 1)
 				return (-1);
 			else
 				return (0);
 		}
-		result = result * 10 + (str[idx + count] - '0');
-		if (result > LONG_MAX)
+		if (result > ULONG_MAX / 10 || (result == ULONG_MAX / 10 && (str[idx] - '0') > (ULONG_MAX % 10)))
 		{
 			if (sign == 1)
 				return (-1);
 			else
 				return (0);
 		}
+		result = result * 10 + (str[idx++] - '0');
 	}
 	return (1);
 }
+
 
 int	ft_atoi(const char *nptr)
 {
