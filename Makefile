@@ -6,7 +6,7 @@
 #    By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 12:08:07 by mvan-pee          #+#    #+#              #
-#    Updated: 2023/10/31 13:17:31 by mvan-pee         ###   ########.fr        #
+#    Updated: 2023/10/31 17:19:13 by mvan-pee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,11 +48,11 @@ SRC =	ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
-BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
 
-OBJBONUS = ${BONUS:.c=.o}
+OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 NAME = libft.a
 
@@ -65,13 +65,13 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(OBJBONUS)
+	rm -f $(OBJ) $(OBJ_BONUS)
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus:	${OBJ} ${OBJBONUS}
-		ar rcs ${NAME} ${OBJ} ${OBJBONUS}
+bonus:	${OBJ} ${OBJ_BONUS}
+		ar rcs ${NAME} ${OBJ} ${OBJ_BONUS}
 
 .PHONY: all clean fclean re
