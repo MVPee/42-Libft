@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 19:44:35 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/30 20:19:04 by mvpee            ###   ########.fr       */
+/*   Created: 2023/10/30 20:04:15 by mvpee             #+#    #+#             */
+/*   Updated: 2023/10/31 10:16:52 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_list	*temp;
+
+	if (!lst || !f)
+		return ;
+	temp = lst;
+	while (temp)
+	{
+		f(temp->content);
+		temp = temp->next;
+	}
 }

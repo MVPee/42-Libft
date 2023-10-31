@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 20:09:54 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/30 20:19:04 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/10/31 11:03:39 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_elem;
+	void	*content;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_list = NULL;
 	while (lst)
 	{
-		new_elem = ft_lstnew(f(lst->content));
+		content = f(lst->content);
+		new_elem = ft_lstnew(content);
 		if (!new_elem)
 		{
+			del(content);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}

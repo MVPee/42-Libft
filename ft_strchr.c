@@ -6,7 +6,7 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 18:05:42 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/15 10:23:45 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/10/31 10:37:20 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
+	c = (unsigned char)c;
 	i = -1;
 	while (s[++i])
 	{

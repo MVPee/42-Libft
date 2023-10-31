@@ -6,7 +6,7 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:35:25 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/15 09:39:07 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/10/31 11:10:02 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ char	*ft_word(char const *s, char c)
 	i = 0;
 	len_word = sep_len(s, c);
 	word = (char *)malloc(sizeof(char) * (len_word + 1));
+	if (!word)
+		return (NULL);
 	while (i < len_word)
 	{
 		word[i] = s[i];

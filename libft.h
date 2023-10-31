@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 12:06:46 by mvan-pee          #+#    #+#             */
-/*   Updated: 2023/10/30 20:16:00 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/10/31 12:56:59 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -23,7 +24,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-// Part1
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -49,7 +49,6 @@ int					ft_atoi(const char *nptr);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *str);
 
-// Part2
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -62,7 +61,6 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
-// Bonus
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
