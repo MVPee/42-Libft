@@ -6,33 +6,28 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:35:25 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/31 11:10:02 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:09:42 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	separator_check(char a, char c)
-{
-	if (a == c)
-		return (1);
-	return (0);
-}
-
-int	total_string(char const *s, char c)
+int	total_strings(char const *s, char c)
 {
 	int	i;
 	int	count;
 
+	if (!s)
+		return (0);
 	count = 0;
 	i = 0;
 	while (s[i])
 	{
-		while (s[i] && separator_check(s[i], c))
+		while (s[i] && (s[i] == c))
 			i++;
 		if (s[i])
 			count++;
-		while (s[i] && !separator_check(s[i], c))
+		while (s[i] && !(s[i] == c))
 			i++;
 	}
 	return (count);
@@ -43,7 +38,7 @@ int	sep_len(char const *s, char c)
 	int	i;
 
 	i = 0;
-	while (s[i] && !separator_check(s[i], c))
+	while (s[i] && !(s[i] == c))
 		i++;
 	return (i);
 }
@@ -68,29 +63,37 @@ char	*ft_word(char const *s, char c)
 	return (word);
 }
 
+void	free_memory(char **strings, int i)
+{
+	while (i-- > 0)
+		free(strings[i]);
+	free(strings);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**strings;
 	int		i;
 
 	i = 0;
-	if (!s)
-		return (0);
-	strings = (char **)malloc(sizeof(char *) * (total_string(s, c) + 1));
-	if (!strings)
-		return (0);
+	strings = (char **)malloc(sizeof(char *) * (total_strings(s, c) + 1));
+	if (!strings || !s)
+		return (NULL);
 	while (*s)
 	{
-		while (*s && separator_check(*s, c))
-			s++;
-		if (*s != '\0')
+		if (*s != c)
 		{
 			strings[i] = ft_word(s, c);
-			i++;
+			if (strings[i++] == NULL)
+			{
+				free_memory(strings, i);
+				return (NULL);
+			}
+			s += sep_len(s, c);
 		}
-		while (*s && !separator_check(*s, c))
+		if (*s)
 			s++;
 	}
-	strings[i] = 0;
+	strings[i] = NULL;
 	return (strings);
 }
