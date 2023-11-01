@@ -6,7 +6,7 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:06:22 by mvpee             #+#    #+#             */
-/*   Updated: 2023/11/01 15:42:00 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:21:45 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
-	if(d == s)
-		return d;
+	if (d == s)
+		return (d);
 	if (!dest && !src && n > 0)
 		return (NULL);
 	i = 0;
