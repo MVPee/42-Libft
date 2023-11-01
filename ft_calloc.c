@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mvpee <mvpee@19.be>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 09:41:49 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/31 10:44:42 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/11/01 08:33:58 by mvpee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*mem;
 
-	mem = (char *)malloc(nmemb * size);
+	if (nmemb && SIZE_MAX / nmemb < size)
+    	return NULL;
+	mem = (void *)malloc(nmemb * size);
 	if (!mem)
 		return (NULL);
 	ft_bzero(mem, nmemb * size);
