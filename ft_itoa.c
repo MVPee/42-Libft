@@ -6,13 +6,13 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:42:44 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/31 12:52:46 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:16:14 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_int_len(int n)
+static int	ft_int_len(int n)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ int	ft_int_len(int n)
 	return (len);
 }
 
-void	ft_int_to_char(unsigned int number, char *nbr, int i)
+static void	ft_int_to_char(unsigned int number, char *nbr, int i)
 {
 	while (number > 0)
 	{

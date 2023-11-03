@@ -6,13 +6,13 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:35:25 by mvpee             #+#    #+#             */
-/*   Updated: 2023/11/03 14:42:42 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:16:46 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	total_strings(char const *s, char c)
+static int	total_strings(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -33,7 +33,7 @@ int	total_strings(char const *s, char c)
 	return (count);
 }
 
-int	sep_len(char const *s, char c)
+static int	sep_len(char const *s, char c)
 {
 	int	i;
 
@@ -43,7 +43,7 @@ int	sep_len(char const *s, char c)
 	return (i);
 }
 
-char	*ft_word(char const *s, char c)
+static char	*ft_word(char const *s, char c)
 {
 	int		len_word;
 	int		i;
@@ -63,7 +63,7 @@ char	*ft_word(char const *s, char c)
 	return (word);
 }
 
-void	*free_memory(char **strings, int i)
+static void	*free_memory(char **strings, int i)
 {
 	while (i-- > 0)
 		free(strings[i]);
@@ -71,7 +71,7 @@ void	*free_memory(char **strings, int i)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_split(char const *s, char c)
 {
 	char	**strings;
 	int		i;
