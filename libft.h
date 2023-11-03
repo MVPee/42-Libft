@@ -6,16 +6,14 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 12:06:46 by mvan-pee          #+#    #+#             */
-/*   Updated: 2023/11/01 08:58:08 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:03:11 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <limits.h>
-# include <stdint.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list

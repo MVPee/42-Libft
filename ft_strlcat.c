@@ -6,7 +6,7 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:57:20 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/15 09:15:11 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/11/03 14:50:40 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ unsigned int	ft_strlcat(char *dest, char *src, size_t size)
 		i++;
 	}
 	dest[size_dest + i] = '\0';
-	return (size_src + size_dest);
+	return ((unsigned int)(size_src + size_dest));
 }

@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvpee <mvpee@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:10:17 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/11 10:24:20 by mvpee            ###   ########.fr       */
+/*   Updated: 2023/11/03 14:49:58 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	total_size(char const *s1, char const *s2)
-{
-	return (ft_strlen(s1) + ft_strlen(s2));
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -25,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * (total_size(s1, s2) + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);
 	i = -1;

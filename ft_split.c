@@ -6,7 +6,7 @@
 /*   By: mvan-pee <mvan-pee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:35:25 by mvpee             #+#    #+#             */
-/*   Updated: 2023/10/31 17:09:42 by mvan-pee         ###   ########.fr       */
+/*   Updated: 2023/11/03 14:42:42 by mvan-pee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,12 @@ char	*ft_word(char const *s, char c)
 	return (word);
 }
 
-void	free_memory(char **strings, int i)
+void	*free_memory(char **strings, int i)
 {
 	while (i-- > 0)
 		free(strings[i]);
 	free(strings);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -75,9 +76,11 @@ char	**ft_split(char const *s, char c)
 	char	**strings;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	strings = (char **)malloc(sizeof(char *) * (total_strings(s, c) + 1));
-	if (!strings || !s)
+	if (!strings)
 		return (NULL);
 	while (*s)
 	{
@@ -85,10 +88,7 @@ char	**ft_split(char const *s, char c)
 		{
 			strings[i] = ft_word(s, c);
 			if (strings[i++] == NULL)
-			{
-				free_memory(strings, i);
-				return (NULL);
-			}
+				return (free_memory(strings, i));
 			s += sep_len(s, c);
 		}
 		if (*s)
